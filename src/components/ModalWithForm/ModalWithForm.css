@@ -1,0 +1,115 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cabinet Grotesk";
+  visibility: hidden;
+}
+
+.modal_opened {
+  visibility: visible;
+}
+
+.modal__close {
+  position: absolute;
+  top: 26px;
+  right: 28px;
+  padding: 0;
+  height: 20px;
+  width: 20px;
+  border: none;
+  background-color: #fff;
+}
+
+.modal__content {
+  background-color: #fff;
+  position: relative;
+  padding: 28px 28px 36px;
+  max-width: 498px;
+  min-width: 320px;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* padding: 0 28px; */
+  padding: 0;
+}
+
+.modal__title {
+  margin: 0;
+  width: 100%;
+  /* padding: 28px 28px 24px; */
+  font-size: 16px;
+  padding-bottom: 24px;
+}
+
+.modal__input {
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+  margin-bottom: 24px;
+  font-size: 16px;
+  padding: 8px 0 4px;
+}
+
+.modal__radio-buttons {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  padding: 0;
+  gap: 8px;
+  margin: 0;
+}
+
+.modal__label_type_radio {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+}
+
+.modal__radio-input {
+  height: 16px;
+  width: 16px;
+  margin-right: 8px;
+}
+
+.modal__submit {
+  width: 124px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  margin-top: 32px;
+}
+
+.modal__legend {
+  margin-bottom: 12px;
+}
