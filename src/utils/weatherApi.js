@@ -11,16 +11,13 @@ export const getWeather = ({ latitude, longitude }, APIkey) => {
 };
 
 export const filterWeatherData = (data) => {
-  if (!data) {
-    return null;
-  }
-  if (!data.main || typeof data.main.temp !== "number") {
-    return null;
-  }
-  if (!data.sys) {
-    return null;
-  }
-  if (!data.weather || !data.weather[0] || !data.weather[0].main) {
+  if (
+    !data ||
+    !data.main ||
+    typeof data.main.temp !== "number" ||
+    !data.sys ||
+    !data.weather?.[0]?.main
+  ) {
     return null;
   }
 
