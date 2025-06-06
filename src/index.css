@@ -1,6 +1,8 @@
 @import url(./vendor/normalize.css);
 
 @font-face {
-  font-family: "Cabinet Grotesk", sans-serif;
   src: url("./vendor/cabinet-grotesk/CabinetGrotesk-Regular.otf");
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: normal;
+  font-style: normal;
 }
