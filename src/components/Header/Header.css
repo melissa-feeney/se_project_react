@@ -17,8 +17,16 @@
   margin: 0;
 }
 
+.header__controls {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
 .header__button {
-  margin: 0 20px 0 auto;
+  /* margin: 0 20px 0 auto; */
+  margin: 0 20px;
+  padding: 0;
   border: none;
   background-color: #f3f3f3;
   font-weight: 700;
