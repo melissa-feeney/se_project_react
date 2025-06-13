@@ -1,0 +1,20 @@
+.profile {
+  display: flex;
+  font-family: Cabinet Grotesk;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0;
+  margin-top: 19px;
+}
+
+.profile__clothing-items {
+  max-width: 1015px;
+  padding: 0 0 80px;
+  margin: 0;
+}
+
+.profile__sidebar {
+  max-width: 260px;
+  gap: 16px;
+}

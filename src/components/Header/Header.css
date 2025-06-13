@@ -33,6 +33,11 @@
   cursor: pointer;
 }
 
+.header__link {
+  text-decoration: none;
+  color: #000;
+}
+
 .header__user {
   display: flex;
   align-items: center;
