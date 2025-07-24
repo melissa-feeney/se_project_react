@@ -49,6 +49,9 @@ export default function AddItemModal({
     onAddItemModalSubmit({ name, imageUrl, weather });
   };
 
+  const isFormValid =
+    name.trim() !== "" && imageUrl.trim() !== "" && weather !== "";
+
   return (
     <ModalWithForm
       buttonText="Add garment"
@@ -56,6 +59,7 @@ export default function AddItemModal({
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
+      isDisabled={!isFormValid}
     >
       <label htmlFor="name" className="modal__label">
         Name{" "}

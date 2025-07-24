@@ -24,13 +24,22 @@
 }
 
 .header__button {
-  /* margin: 0 20px 0 auto; */
   margin: 0 20px;
   padding: 0;
   border: none;
   background-color: #f3f3f3;
   font-weight: 700;
   cursor: pointer;
+}
+
+.header__auth-button {
+  border: none;
+  font-family: "Cabinet Grotesk";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  margin-left: 20px;
+  padding: 0;
 }
 
 .header__link {
@@ -47,4 +56,25 @@
 .header__username {
   margin: 0;
   line-height: 100%;
+}
+
+.header__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header__avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #212121;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
 }

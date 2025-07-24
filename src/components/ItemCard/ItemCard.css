@@ -4,22 +4,49 @@
   position: relative;
   display: flex;
   justify-content: center;
+  overflow: visible;
 }
 
 .card__name {
   position: absolute;
   top: 15px;
+  left: 15px;
   background: #fff;
   color: #000;
   opacity: 60%;
   padding: 2px 12px;
   border-radius: 4px;
   margin: 0;
+  max-width: calc(100% - 80px);
 }
+
 .card__image {
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 20px;
-
   cursor: pointer;
+}
+
+.card__like-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  background-image: url("../../assets/like-button.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+}
+
+.card__like-button_active {
+  background-image: url("../../assets/like-button-active.svg");
+}
+
+.card__like-button:hover {
+  opacity: 0.7;
 }
