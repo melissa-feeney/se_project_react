@@ -1,4 +1,5 @@
 @import url(./vendor/normalize.css);
+@import url(./components/AuthPage/AuthPage.css);
 
 @font-face {
   src: url("./vendor/cabinet-grotesk/CabinetGrotesk-Regular.otf");
