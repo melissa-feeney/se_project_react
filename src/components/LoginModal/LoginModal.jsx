@@ -1,7 +1,12 @@
 import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-export default function LoginModal({ isOpen, onClose, onLogin }) {
+export default function LoginModal({
+  isOpen,
+  onClose,
+  onLogin,
+  onSwitchToRegister,
+}) {
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -27,6 +32,21 @@ export default function LoginModal({ isOpen, onClose, onLogin }) {
       onClose={onClose}
       onSubmit={handleSubmit}
       isDisabled={!isFormValid}
+      switchButton={
+        <span
+          className="modal__switch-text"
+          onClick={() => {
+            console.log("Switch to register clicked!");
+            onSwitchToRegister();
+          }}
+          style={{
+            color: isFormValid ? "#000" : "rgba(0, 0, 0, 0.3)",
+            cursor: "pointer",
+          }}
+        >
+          or Sign Up
+        </span>
+      }
     >
       <label className="modal__label">
         Email

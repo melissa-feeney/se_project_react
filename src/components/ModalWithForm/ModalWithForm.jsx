@@ -11,6 +11,7 @@ function ModalWithForm({
   onSubmit,
   isDisabled,
   additionalText,
+  switchButton,
 }) {
   return (
     <div className={`modal ${isOpen && "modal_opened"}`}>
@@ -33,6 +34,7 @@ function ModalWithForm({
             >
               {buttonText}
             </button>
+            {switchButton}
             {additionalText && (
               <span className="modal__additional-text">{additionalText}</span>
             )}

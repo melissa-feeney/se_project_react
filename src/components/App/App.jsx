@@ -11,7 +11,6 @@ import Profile from "../Profile/Profile";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
-import { defaultClothingItems } from "../../utils/constants";
 import {
   getItems,
   addItem,
@@ -77,7 +76,7 @@ function App() {
         return checkToken(res.token);
       })
       .then((user) => setCurrentUser(user))
-      .catch((err) => console.error(err));
+      .catch(console.error);
   };
 
   const handleLogin = (formData) => {
@@ -89,7 +88,7 @@ function App() {
         return checkToken(res.token);
       })
       .then((user) => setCurrentUser(user))
-      .catch((err) => console.error(err));
+      .catch(console.error);
   };
 
   const handleLogout = () => {
@@ -138,9 +137,7 @@ function App() {
         setClothingItems((prevItems) => [newItem, ...prevItems]);
         closeActiveModal();
       })
-      .catch((err) => {
-        console.error(err);
-      });
+      .catch(console.error);
   };
 
   const handleUpdateUser = (userData) => {
@@ -160,14 +157,14 @@ function App() {
               cards.map((item) => (item._id === id ? updatedCard : item))
             );
           })
-          .catch((err) => console.log(err))
+          .catch(console.error)
       : removeCardLike(id, token)
           .then((updatedCard) => {
             setClothingItems((cards) =>
               cards.map((item) => (item._id === id ? updatedCard : item))
             );
           })
-          .catch((err) => console.log(err));
+          .catch(console.error);
   };
 
   const handleRequestDelete = (itemId) => {
@@ -195,9 +192,7 @@ function App() {
         );
         closeActiveModal();
       })
-      .catch((err) => {
-        console.error(err);
-      });
+      .catch(console.error);
   };
 
   useEffect(() => {
@@ -257,7 +252,6 @@ function App() {
                       onCardClick={handleCardClick}
                       clothingItems={clothingItems}
                       onAddClick={handleAddClick}
-                      currentUser={currentUser}
                       onLogout={handleLogout}
                       onEditProfile={() => setIsEditProfileModalOpen(true)}
                       onCardLike={handleCardLike}
@@ -273,11 +267,19 @@ function App() {
             isOpen={isRegisterModalOpen}
             onClose={() => setIsRegisterModalOpen(false)}
             onRegister={handleRegister}
+            onSwitchToLogin={() => {
+              setIsRegisterModalOpen(false);
+              setIsLoginModalOpen(true);
+            }}
           />
           <LoginModal
             isOpen={isLoginModalOpen}
             onClose={() => setIsLoginModalOpen(false)}
             onLogin={handleLogin}
+            onSwitchToRegister={() => {
+              setIsLoginModalOpen(false);
+              setIsRegisterModalOpen(true);
+            }}
           />
           <AddItemModal
             isOpen={activeModal === "add-garment"}
